@@ -8,7 +8,6 @@
 *.cache
 .dirstamp
 *.user
-config*
 *Debug/
 *Release/
 *.ncb

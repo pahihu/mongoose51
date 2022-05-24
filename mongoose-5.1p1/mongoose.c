@@ -119,7 +119,7 @@ typedef struct stat file_stat_t;
 // Following define gets rid of openssl deprecation messages
 #define MAC_OS_X_VERSION_MIN_REQUIRED MAC_OS_X_VERSION_10_6
 
-#ifdef USE_CYASSL
+#ifdef USE_SSL
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 #else
@@ -2969,7 +2969,7 @@ int mg_parse_header(const char *str, const char *var_name, char *buf,
 }
 
 #ifdef USE_LUA
-#include "lua_5.3.5.h"
+#include "lua_5.4.4.h"
 
 #ifdef _WIN32
 static void *mmap(void *addr, int64_t len, int prot, int flags, int fd,
