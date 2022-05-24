@@ -1,0 +1,22 @@
+h="lua_h.cfg luaconf.h lua.h lauxlib.h lualib.h"
+c="lua_c.cfg llimits.h lobject.h lapi.h lzio.h ldo.h ltm.h lstate.h lgc.h lvm.h ltable.h \
+lstring.h lfunc.h lundump.h ldebug.h lopcodes.h llex.h lparser.h lcode.h \
+lmem.h lctype.h lapi.c lcode.c lctype.c ldebug.c ldo.c ldump.c lfunc.c lgc.c \
+llex.c lmem.c lobject.c lopcodes.c lparser.c lstate.c lstring.c ltable.c ltm.c \
+lundump.c lvm.c lzio.c lauxlib.c lbaselib.c lcorolib.c ldblib.c \
+liolib.c lmathlib.c loslib.c lstrlib.c ltablib.c loadlib.c lutf8lib.c linit.c"
+# c lbitlib.c
+s="$c $h"
+#
+VER=5.4.4
+for f in $h
+do
+   echo $f
+   cat $f >>lua_${VER}.h
+done
+
+for f in $c
+do
+   echo $f
+   cat $f >>lua_${VER}.c
+done
