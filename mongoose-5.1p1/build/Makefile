@@ -4,6 +4,8 @@
 # This Makefile is GNU make compatible. You can get GNU Make from
 # http://gnuwin32.sourceforge.net/packages/make.htm
 
+CC = cc -flto -ffunction-sections -fdata-sections -Wl,-dead_strip
+
 PROG = mongoose
 EXE_SUFFIX =
 CFLAGS_EXTRA = -Wno-gnu-label-as-value -Wno-deprecated-declarations
