@@ -452,7 +452,7 @@ static void cry(struct mg_connection *conn,
 static const char *getreq(struct mg_connection *conn);
 
 #ifdef USE_LUA
-#include "lua_5.2.1.h"
+#include "lua54.h"
 static int handle_lsp_request(struct mg_connection *, const char *,
                               struct file *, struct lua_State *);
 #endif

@@ -24,9 +24,9 @@ YASSL_LIBS  = -L$(HOME)/lib -lcyassl
 # YASSL_LIBS  = /opt/local/lib/libssl.dylib /opt/local/lib/libcrypto.dylib
 
 TINY_SOURCES = ../mongoose.c main.c
-LUA_SOURCES = $(TINY_SOURCES) lua_5.4.4.c
+LUA_SOURCES = $(TINY_SOURCES) lua54.c
 LUA_SQLITE_SOURCES = $(LUA_SOURCES) sqlite3.c lsqlite3.c
-BIG_SOURCES = $(TINY_SOURCES) lua_5.4.4.c sqlite3.c lsqlite3.c $(YASSL_SOURCES)
+BIG_SOURCES = $(TINY_SOURCES) lua54.c sqlite3.c lsqlite3.c $(YASSL_SOURCES)
 
 SQLITE_FLAGS = -DTHREADSAFE=1 -DSQLITE_ENABLE_FTS3 \
                -DSQLITE_ENABLE_FTS3_PARENTHESIS
@@ -79,7 +79,7 @@ $(PROG)-big: $(BIG_SOURCES)
 	$(CC) $(BIG_SOURCES) -o $@ $(CFLAGS) $(BIG_FLAGS)
 
 unix_unit_test: $(LUA_SOURCES) Makefile ./test/unit_test.c
-	$(CC) ./test/unit_test.c lua_5.4.4.c $(CFLAGS) -g -O0 -o t && ./t
+	$(CC) ./test/unit_test.c lua54.c $(CFLAGS) -g -O0 -o t && ./t
 
 # Windows build
 $(PROG)-lua-sqlite.exe: $(LUA_SQLITE_SOURCES)
@@ -103,7 +103,7 @@ $(PROG).dll: $(TINY_SOURCES) Makefile
 
 # This is broken now due to SSL exclusion
 windows_unit_test.exe: ../mongoose.c Makefile
-	$(CL) ./test/unit_test.c lua_5.4.4.c  \
+	$(CL) ./test/unit_test.c lua54.c  \
           /link /libpath:$(MSVC)/lib advapi32.lib /out:$@
 	./$@
 

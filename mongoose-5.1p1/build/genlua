@@ -8,7 +8,7 @@ liolib.c lmathlib.c loslib.c lstrlib.c ltablib.c loadlib.c lutf8lib.c linit.c"
 # c lbitlib.c
 s="$c $h"
 #
-VER=5.4.4
+VER=5.4.6
 for f in $h
 do
    echo $f

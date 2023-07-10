@@ -32,7 +32,7 @@
 
 #define LUA_LIB
 #define LUA_AMALGAMATION
-#include "lua_5.4.4.h"
+#include "lua54.h"
 
 #if LUA_VERSION_NUM > 501
 /*
