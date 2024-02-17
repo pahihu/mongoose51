@@ -9,7 +9,7 @@ CC = cc -flto -ffunction-sections -fdata-sections -Wl,-dead_strip
 PROG = mongoose
 EXE_SUFFIX =
 CFLAGS_EXTRA = -Wno-gnu-label-as-value -Wno-deprecated-declarations
-CFLAGS = -std=c99 -O2 -W -Wall -pedantic -pthread -pipe -I. -I.. $(CFLAGS_EXTRA)
+CFLAGS = -std=c99 -O2 -fomit-frame-pointer -W -Wall -pedantic -pthread -pipe -I. -I.. $(CFLAGS_EXTRA)
 VERSION = $(shell perl -lne \
             'print $$1 if /define\s+MONGOOSE_VERSION\s+"(\S+)"/' ../mongoose.h)
 VDIR = mongoose-$(VERSION)
